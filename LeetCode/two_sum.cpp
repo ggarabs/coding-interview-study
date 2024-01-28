@@ -1,4 +1,4 @@
-// Resolvido em 26/01/2024
+// Resolvido em 27/01/2024
 class Solution { // Hash table - Time O(n) - Space O(n)
 public:
     static vector<int> twoSum(vector<int>& nums, int target){

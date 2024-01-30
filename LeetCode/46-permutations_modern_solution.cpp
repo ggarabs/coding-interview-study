@@ -1,0 +1,21 @@
+// Resolvido em 29/01/2024
+class Solution { // Backtracking - Time O(n*n!) - Space O(n*n!)
+public:
+    void solve(int idx, vector<int>& nums, vector<vector<int>>& ans){
+        if(idx == nums.size()){
+            ans.push_back(nums);
+            return;
+        }
+        for(int i = idx; i < nums.size(); i++){
+            swap(nums[idx], nums[i]);
+            solve(idx+1, nums, ans);
+            swap(nums[idx], nums[i]);
+        }
+    }
+
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        solve(0, nums, ans);
+        return ans;
+    }
+};
